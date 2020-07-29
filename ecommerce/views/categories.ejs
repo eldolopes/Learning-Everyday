@@ -6,13 +6,13 @@
     <div class="container">    
         <header class="section-heading">    
               
-            <h3 class="section-title"><%= onlyOneCategory[0].category %></h3>
+            <h3 class="section-title"><%= oneCategoryById[0].category %></h3>
            
         </header><!-- sect-heading -->    
     </div><!-- container // -->
 </section>
     <div class="row">
-        <% allProducts.forEach( productList => { %>    
+        <% allProductsByCategoryId.forEach( productList => { %>    
             <aside class="col-md-12">
         <article class="card card-product-list mb-4">
             <div class="card-body">

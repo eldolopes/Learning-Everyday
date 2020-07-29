@@ -1,7 +1,9 @@
 const express =require('express');
 const path = require('path');
 const app = express();
-const slug = require('./utils/slug');
+
+const categoryModels = require('./Models/category')
+const productsModels = require('./Models/products')
 
 const port = process.env.PORT || 3000;
 //DB COM KNEX
@@ -21,44 +23,29 @@ db.on('query', query => {
 
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
-//HOME.EJS
+
 app.get('/', async(req, res) => {  
-    const allCategories = await db('categories').select('*');    
-    const allCategoriesWithSlug = allCategories.map( listCategory => {
-        const newCategoryToSlug = {...listCategory, toSlug: slug(listCategory.category)}
-        return newCategoryToSlug        
-    });
-    const allProducts = await db('products').select('*')
+    const allCategoriesWithSlug = await categoryModels.getAllCategoriesWithSlug(db)()
+    const allProductsStandard = await productsModels.getAllProductsStandard(db)()
     //console.log(allCategories)
     //console.log(allCategoriesWithSlug)
     res.render('home', {
-        allCategories: allCategoriesWithSlug,
-        allProducts
-    });
+        allCategoriesWithSlug, //: allCategoriesWithSlug,
+        allProductsStandard
+    })
     //console.log(allProducts)
 });
-//CATEGORIAS.EJS
+
 app.get('/categories/:id/:toSlug', async(req, res) => {
-    const allCategories = await db('categories').select('*')
-    const allCategoriesWithSlug = allCategories.map( listCategory => {
-        const newCategoryToSlug = {...listCategory, toSlug: slug(listCategory.category)}
-        return newCategoryToSlug
-    });
-    const allProducts = await db('products').select('*')
-    .where('id', function () {
-        this
-        .select('categories_products.products_id')
-        .from('categories_products')
-        .whereRaw('categories_products.products_id = products.id')
-        .where('categories_id', req.params.id)
-    });
-    const onlyOneCategory = await db('categories').select('*').where('id', req.params.id)
+    const allCategoriesWithSlug = await categoryModels.getAllCategoriesWithSlug(db)()
+    const allProductsByCategoryId = await productsModels.getAllProductsByCategoryId(db)(req.params.id)
+    const oneCategoryById = await categoryModels.getOneCategoryById(db)(req.params.id)
     //console.log(onlyCategory)
     //res.send(products)
     res.render('categories', {
-        allCategories: allCategoriesWithSlug,
-        allProducts,
-        onlyOneCategory
+        allCategoriesWithSlug,//: allCategoriesWithSlug,
+        allProductsByCategoryId,
+        oneCategoryById
     });
 });
 

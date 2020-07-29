@@ -101,7 +101,7 @@ $(document).ready(function() {
       	<li class="nav-item dropdown">
            <a class="nav-link" href="/">Todos os Produtos</a>
         </li>        
-		<% allCategories.forEach( listCategory => { %>
+		<% allCategoriesWithSlug.forEach( listCategory => { %>
         <li class="nav-item">
           <a class="nav-link" href="/categories/<%- listCategory.id %>/<%- listCategory.toSlug %>"><%= listCategory.category %></a>
         </li>
