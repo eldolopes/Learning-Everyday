@@ -1,4 +1,4 @@
-# Learning-Today
+# Learning-Everyday
 Principais Projetos e Técnicas aplicadas durante os estudos do Desenvolvimento Full-Stack JavaScript
 
 Projetos e Técnicas Desenvolvidas:
