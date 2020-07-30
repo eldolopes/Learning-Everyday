@@ -2,8 +2,8 @@ const express =require('express');
 const path = require('path');
 const app = express();
 
-const categoryModels = require('./Models/category')
-const productsModels = require('./Models/products')
+const categoryModels = require('./Models/category');
+const productsModels = require('./Models/products');
 
 const port = process.env.PORT || 3000;
 //DB COM KNEX
@@ -24,29 +24,47 @@ db.on('query', query => {
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
-app.get('/', async(req, res) => {  
+//MIDDLEWARE
+app.use(async(req, res, next) => {
     const allCategoriesWithSlug = await categoryModels.getAllCategoriesWithSlug(db)()
+    res.locals = {
+        allCategoriesWithSlug
+    }
+    next()
+});
+
+app.get('/', async(req, res) => {  
+    //const allCategoriesWithSlug = await categoryModels.getAllCategoriesWithSlug(db)()
     const allProductsStandard = await productsModels.getAllProductsStandard(db)()
     //console.log(allCategories)
     //console.log(allCategoriesWithSlug)
     res.render('home', {
-        allCategoriesWithSlug, //: allCategoriesWithSlug,
+        //allCategoriesWithSlug,
         allProductsStandard
     })
     //console.log(allProducts)
 });
 
-app.get('/categories/:id/:toSlug', async(req, res) => {
-    const allCategoriesWithSlug = await categoryModels.getAllCategoriesWithSlug(db)()
+app.get('/categoria/:id/:toSlug', async(req, res) => {
+    //const allCategoriesWithSlug = await categoryModels.getAllCategoriesWithSlug(db)()
     const allProductsByCategoryId = await productsModels.getAllProductsByCategoryId(db)(req.params.id)
     const oneCategoryById = await categoryModels.getOneCategoryById(db)(req.params.id)
     //console.log(onlyCategory)
     //res.send(products)
-    res.render('categories', {
-        allCategoriesWithSlug,//: allCategoriesWithSlug,
+    res.render('categoria', {
+        //allCategoriesWithSlug,//: allCategoriesWithSlug,
         allProductsByCategoryId,
         oneCategoryById
-    });
+    })
+});
+
+app.get('/produto/:id/:toSlug', async(req, res) => {
+    //const allCategoriesWithSlug = await categoryModels.getAllCategoriesWithSlug(db)()
+    const oneProductById = await productsModels.getOneProductById(db)(req.params.id)
+    res.render('produto-detalhado', {
+        //allCategoriesWithSlug,
+        oneProductById
+    })
 });
 
 app.use(express.static('public'));
