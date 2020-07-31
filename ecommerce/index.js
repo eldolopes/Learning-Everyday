@@ -2,10 +2,15 @@ const express =require('express');
 const path = require('path');
 const app = express();
 
-const categoryModels = require('./Models/category');
-const productsModels = require('./Models/products');
+const homeControllers = require('./controllers/home')
+const categoriesModels = require('./models/categories');
 
+const categoriesRoutes = require('./routes/categories')
+const productsRoutes = require('./routes/products')
+
+//PORT
 const port = process.env.PORT || 3000;
+
 //DB COM KNEX
 const db = require('knex') ({
     client: 'mysql2',
@@ -16,59 +21,32 @@ const db = require('knex') ({
         database: 'myecommerce'
     }
 });
-//TESTE DE QUERY
+
+//QUERY TEST
 db.on('query', query => {
     console.log(`SQL: ${query.sql}`)
 });
 
+//VIEWS ENGINE
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
 //MIDDLEWARE
 app.use(async(req, res, next) => {
-    const allCategoriesWithSlug = await categoryModels.getAllCategoriesWithSlug(db)()
+    const allCategoriesWithSlug = await categoriesModels.getAllCategoriesWithSlug(db)()
     res.locals = {
         allCategoriesWithSlug
     }
     next()
 });
 
-app.get('/', async(req, res) => {  
-    //const allCategoriesWithSlug = await categoryModels.getAllCategoriesWithSlug(db)()
-    const allProductsStandard = await productsModels.getAllProductsStandard(db)()
-    //console.log(allCategories)
-    //console.log(allCategoriesWithSlug)
-    res.render('home', {
-        //allCategoriesWithSlug,
-        allProductsStandard
-    })
-    //console.log(allProducts)
-});
-
-app.get('/categoria/:id/:toSlug', async(req, res) => {
-    //const allCategoriesWithSlug = await categoryModels.getAllCategoriesWithSlug(db)()
-    const allProductsByCategoryId = await productsModels.getAllProductsByCategoryId(db)(req.params.id)
-    const oneCategoryById = await categoryModels.getOneCategoryById(db)(req.params.id)
-    //console.log(onlyCategory)
-    //res.send(products)
-    res.render('categoria', {
-        //allCategoriesWithSlug,//: allCategoriesWithSlug,
-        allProductsByCategoryId,
-        oneCategoryById
-    })
-});
-
-app.get('/produto/:id/:toSlug', async(req, res) => {
-    //const allCategoriesWithSlug = await categoryModels.getAllCategoriesWithSlug(db)()
-    const oneProductById = await productsModels.getOneProductById(db)(req.params.id)
-    res.render('produto-detalhado', {
-        //allCategoriesWithSlug,
-        oneProductById
-    })
-});
-
+//RENDER
+app.get('/', homeControllers.getIndex(db));
+app.use(categoriesRoutes(db))
+app.use(productsRoutes(db))
 app.use(express.static('public'));
 
+//LISTEN
 app.listen(port, err => {
     if(err){
         console.log('Erro ao iniciar: ', err)
