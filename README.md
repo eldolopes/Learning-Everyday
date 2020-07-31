@@ -3,7 +3,7 @@ Principais Projetos e Técnicas aplicadas durante os estudos do Desenvolvimento 
 
 Projetos e Técnicas Desenvolvidas:
 
-- CRUD: create, read, update, delete
+- CRUD: create, read, update, delete - concluído.
 ______
 
 - ECOMMERCE - Principais tecnologias utilizadas no projeto do site: node, express, knex, ejs, mysql2, heidisql, mysql workbench, xampp, boostrap.
@@ -19,11 +19,11 @@ ______
 5. Rotas definidas no padrão com routes, models e controllers deixando o projeto mais enxuto e fácil de testar.
 ______
   
-- INIT: base incial start server em node com express.
+- INIT: base incial start server em node com express. - concluído.
 ______
 
-- KNEX: testes com a query builder "batteries included" para node que estabelece a conexão com os principais banco de dados.
+- KNEX: testes com a query builder "batteries included" para node que estabelece a conexão com os principais banco de dados. concluído.
 ______
 
-- NODE JS: base inicial start server em node com http.
+- NODE JS: base inicial start server em node com http. concluído.
 ______
