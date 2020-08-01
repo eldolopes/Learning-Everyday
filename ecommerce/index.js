@@ -1,17 +1,4 @@
-const express =require('express');
-const path = require('path');
-const app = express();
-
-const homeControllers = require('./controllers/home')
-const categoriesModels = require('./models/categories');
-
-const categoriesRoutes = require('./routes/categories')
-const productsRoutes = require('./routes/products')
-
-//PORT
-const port = process.env.PORT || 3000;
-
-//DB COM KNEX
+//DB - KNEX
 const db = require('knex') ({
     client: 'mysql2',
     connection: {
@@ -27,24 +14,10 @@ db.on('query', query => {
     console.log(`SQL: ${query.sql}`)
 });
 
-//VIEWS ENGINE
-app.set('view engine', 'ejs');
-app.set('views', path.join(__dirname, 'views'));
-
-//MIDDLEWARE
-app.use(async(req, res, next) => {
-    const allCategoriesWithSlug = await categoriesModels.getAllCategoriesWithSlug(db)()
-    res.locals = {
-        allCategoriesWithSlug
-    }
-    next()
-});
-
-//RENDER
-app.get('/', homeControllers.getIndex(db));
-app.use(categoriesRoutes(db))
-app.use(productsRoutes(db))
-app.use(express.static('public'));
+//APP
+const app = require('./app')(db)
+//PORT
+const port = process.env.PORT || 3000;
 
 //LISTEN
 app.listen(port, err => {

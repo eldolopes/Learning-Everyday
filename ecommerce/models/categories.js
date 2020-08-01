@@ -6,7 +6,7 @@ const getOneCategoryById = db => async(id) => {
 }
 
 const getAllCategoriesWithSlug = db =>  async() => {
-    const allCategories = await db('categories').select('*');    
+    const allCategories = await db('categories').select('*')   
     const allCategoriesWithSlug = allCategories.map( listCategory => {
         const newCategoryToSlug = {...listCategory, toSlug: slug(listCategory.category)}
         return newCategoryToSlug        
@@ -16,5 +16,5 @@ const getAllCategoriesWithSlug = db =>  async() => {
 
 module.exports = {
     getOneCategoryById,
-    getAllCategoriesWithSlug
+    getAllCategoriesWithSlug,
 }
