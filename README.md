@@ -16,7 +16,7 @@ ______
 2. O site já permite o acesso aos dados cadastrados com visualização das categorias e produtos no browser, as categorias dos produtos estão sendo listadas automaticamento em jsp embutido no html.
 3. Criado a função slug para exibição dos nomes das categorias na barra de endereço do browser, principais funções de acesso ao banco de dados retirado da thread do server e repassado para dentro de models para uso global.
 4. Os produtos estão sendo listados individualmente com a exibição do nome e da descrição. Reduzido o tamanho do código no server com o middeware que repassa a função de categorias com slug para os views automaticamente.
-5. Rotas definidas no padrão com routes, models e controllers deixando o projeto mais enxuto e fácil de testar.
+5. Rotas definidas no padrão com routes, models e controllers deixando o projeto mais enxuto e fácil de testar, preços dos produtos listados em ordem.
 ______
   
 - INIT: base incial start server em node com express. - concluído.
