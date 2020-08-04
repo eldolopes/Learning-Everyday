@@ -1,5 +1,5 @@
 # Learning-Everyday
-Principais Projetos e Técnicas aplicadas durante os estudos do Desenvolvimento Full-Stack JavaScript
+Principais Projetos e Técnicas aplicadas durante os estudos do Desenvolvimento Full-Stack JavaScript, Node, React e React Native.
 
 Projetos e Técnicas Desenvolvidas:
 
