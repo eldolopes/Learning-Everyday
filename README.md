@@ -3,6 +3,9 @@ Principais Projetos e Técnicas aplicadas durante os estudos do Desenvolvimento 
 
 Projetos e Técnicas Desenvolvidas:
 
+- GOSTACK: Estudos iniciais em node, react e react native.
+______
+
 - CRUD: create, read, update, delete - concluído.
 ______
 
