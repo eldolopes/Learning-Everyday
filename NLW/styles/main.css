@@ -18,7 +18,8 @@
     --color-box-base: #FFFFFF;
     --color-box-footer: #FAFAFC;
     --color-small-info: #C1BCCC;
-    font-size: 60%; /* controle das medidas rem */
+    /* controle das medidas rem */
+    font-size: 60%; 
 }
 
 * {
@@ -28,7 +29,7 @@
 }
 
 body {
-    height: 100vh;
+    height: 90vh;
     background-color: var(--color-background);
     display: flex;
     align-items: center;
@@ -41,4 +42,9 @@ button,
 textarea {
     font: 500 1.6rem Poppins;
     color: var(--color-text-base);
+}
+
+#container {
+    width: 90vw;
+    max-width: 400px;
 }
