@@ -5,7 +5,7 @@ Projetos e Técnicas Desenvolvidas:
 
 - GOSTACK / GOBARBER: Estudos iniciais em node, react e react native.
 Conceitos de API Rest, query params, route params, crud, middlewares, debugging node.
-- Projeto GOBARBER: Aplicativo em desenvolvimento com o curso da RocketSeat.
+- Projeto GOBARBER: Aplicativo em desenvolvimento.
 >Diário de desenvolvimento
 1.Estrutura de back-end, nodemon, sucrase
 ______
