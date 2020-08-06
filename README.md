@@ -16,9 +16,6 @@ Conceitos de API Rest, query params, route params, crud, middlewares, debugging 
 1.Estrutura de back-end, nodemon, sucrase
 ______
 
-- CRUD: create, read, update, delete - concluído.
-______
-
 - ECOMMERCE - Principais tecnologias utilizadas no projeto do site: node, express, knex, ejs, mysql2, heidisql, mysql workbench, xampp, boostrap.
 
   Banco de dados: desenvolvimento em sql com as ferramentas mysql workbench para criação do model do banco, xammp para servir e heidisql para conectar ao banco de dados,           servidor express no node, conexão mysql2 com knex, template enginer ejs.
@@ -30,6 +27,9 @@ ______
 3. Criado a função slug para exibição dos nomes das categorias na barra de endereço do browser, principais funções de acesso ao banco de dados retirado da thread do server e repassado para dentro de models para uso global.
 4. Os produtos estão sendo listados individualmente com a exibição do nome e da descrição. Reduzido o tamanho do código no server com o middeware que repassa a função de categorias com slug para os views automaticamente.
 5. Rotas definidas no padrão com routes, models e controllers deixando o projeto mais enxuto e fácil de testar, preços dos produtos listados em ordem.
+______
+
+- CRUD: create, read, update, delete - concluído.
 ______
   
 - INIT: base incial start server em node com express. - concluído.
