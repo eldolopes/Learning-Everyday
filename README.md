@@ -3,10 +3,10 @@ Principais Projetos e Técnicas aplicadas durante os estudos do Desenvolvimento 
 
 Projetos e Técnicas Desenvolvidas:
 
--NLW: Aplicativo desenvolvido na Semana Next Level Week disponibilizado pela Rocketseat.
+-NLW: Semana Next Level Week #2 disponibilizado pela Rocketseat. Stacks: node.js, react e react native.
 >Diário de desenvolvimento
 - Objetivo: Desenvolver um aplicativo do início ao fim que servirá como plataforma de educação. Nome do app: Proffy
-Dia 1 e 2 - desenvolivimento html e css responsivo mobile first da interface do aplicativo.
+Dia 1 e 2 - desenvolivimento html e css responsivo - mobile first - da interface do aplicativo.
 ______
 
 - GOSTACK / GOBARBER: Estudos iniciais em node, react e react native.
