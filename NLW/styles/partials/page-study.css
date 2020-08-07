@@ -131,7 +131,7 @@
     }
 
     .page-header {
-        height: 300px;
+        height: 380px;
     }
 
     .page-header .top-bar-container {
@@ -166,7 +166,7 @@
         grid-template-columns: repeat(4, 1fr);
         gap: 16px;
         position: absolute;
-        bottom: -42px;
+        bottom: -70px;
     }
 
     #page-study main {

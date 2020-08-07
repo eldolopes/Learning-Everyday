@@ -1,8 +1,10 @@
 .select-block label,
 .input-block label,
 .textarea-block label {
+    margin-left: 0.4rem;
+    margin-bottom: 0;
     font-size: 1.4rem;
-    color: var(--color-text-complement);
+    color: var(--color-text-in-primary);
 }
 
 .input-block input,

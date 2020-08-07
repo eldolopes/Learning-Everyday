@@ -21,7 +21,8 @@
 }
 
 .page-header .top-bar-container a:hover {
-    opacity: 0.6;
+    opacity: 0.6;   
+    transform: scaleX(1.1);
 }
 
 .page-header .top-bar-container > img {
@@ -31,6 +32,8 @@
 
 .page-header .top-bar-container img:hover {
     opacity: 0.8;
+    transform: scaleY(1.1);
+    
 }
 .page-header .header-content {
     width: 90%;
@@ -84,4 +87,5 @@
         max-width: 350px;
         margin-top: 0;
     }
+    
 }
