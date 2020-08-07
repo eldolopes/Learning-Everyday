@@ -6,7 +6,7 @@ Projetos e Técnicas Desenvolvidas:
 - NLW: Semana Next Level Week #2 disponibilizado pela Rocketseat. Stacks: node.js, react e react native.
 >Diário de desenvolvimento - Objetivo: Desenvolver um aplicativo do início ao fim que servirá como plataforma de educação. Nome do app: Proffy.
 
-1. Dia 1 e 2 - desenvolivimento html e css responsivo - mobile first - da interface do aplicativo.
+1. Dia 1, 2 e 3 - desenvolvimento html e css responsivo - mobile first - da interface do aplicativo (página inicial, formulario de entrada, página de filtragem.
 ______
 
 - GOSTACK / GOBARBER: Estudos iniciais em node, react e react native.
