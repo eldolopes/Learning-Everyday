@@ -20,7 +20,7 @@ const getOneProductById = db => async(id) => {
     const oneProductById = await db('products').select('*')
     .where('id', id)
     return oneProductById[0]    
-};
+}
 
 const getProductVariationsById = db => async(id) => {
     const productVariationsById = await db('product_variations').select('*')
