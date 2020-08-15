@@ -1,9 +1,8 @@
 const express = require('express')
 const app = express()
-const path = require('path')
 
 const routes = require('../routes/routes')
-
+/*
 const db = require('knex') ({
     client: 'mysql2',
     connection: {
@@ -13,7 +12,7 @@ const db = require('knex') ({
         database: 'proffy'
     }
 })
-
+*/
 const nunjucks = require('nunjucks')
 nunjucks.configure('src/views', {
     express: app,
@@ -24,7 +23,7 @@ nunjucks.configure('src/views', {
 app.set('view engine', 'ejs')
 //app.set('views', path.join(__dirname, 'views'))
 
-app.use(routes(db))
+app.use(routes())
 
 app.use(express.static('public'))
 

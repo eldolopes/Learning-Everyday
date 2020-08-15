@@ -1,8 +1,8 @@
 const slug = require('../utils/slug');
 
 const getOneCategoryById = db => async(id) => {
-    const onlyOneCategoryById = await db('categories').select('*').where('id', id)
-    return onlyOneCategoryById
+    const oneCategoryById = await db('categories').select('*').where('id', id)
+    return oneCategoryById
 }
 
 const getAllCategoriesWithSlug = db =>  async() => {

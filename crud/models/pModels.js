@@ -11,7 +11,6 @@ const findAll = (connection) => {
     })    
 }
 
-
 //DELETE
 const deleteOneM = (connection, id) => {
     return new Promise((resolve, reject) => {

@@ -3,39 +3,37 @@ const allCourses = require('./courses')
 const weekdays = require('./weekdays')
 
 
-const teachers = db  => async(req, res) => {
-    const allFilters = await allTeachersModels.getAllFilters(req)()
-    const allTeachers = await allTeachersModels.getAllTeachers(db)()
+const teachers = ()  => (req, res) => {
+    const allFilters =  allTeachersModels.getAllFilters(req)()
+    const allTeachers =  allTeachersModels.proffys
     res.render('study', {
         allTeachers,
         allFilters,
         allCourses,
         weekdays
     })
-    //console.log(`AllTeachers ${{nome: allTeachers}}`)
-    //console.log(allTeachers)
-    //console.log(`AllFilters / Subject = ${allFilters.subject}`)
-    //console.log(allFilters)
-    //console.log(`AllCourses / Courses = ${allCourses.courses}`)
-    //console.log(allCourses)
-    //console.log(weekdays)
+    console.log(allFilters)
 }
 
+
+
 const giveClasses = () => (req, res) => {
+    const data = req.query
+    const isNotEmpty = Object.keys(data).length > 0
+    if(isNotEmpty){
+        const changeCoursesNumbersInPosition = require('../public/scripts/courses')
+        data.subject = changeCoursesNumbersInPosition(data.subject)
+        allTeachersModels.proffys.push(data)
+        return res.redirect("/study")
+    }
+
     return res.render('give-classes', {
         allCourses,
         weekdays
     })
 }
 
-const createTeachers = () => async(db, req, res) => {     
-        await allTeachersModels.createTeachers(db, req.query)
-        return res.redirect('/study') 
-        
-}
-
 module.exports = {
     teachers,
-    giveClasses,
-    createTeachers
+    giveClasses
 }
