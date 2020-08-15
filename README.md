@@ -7,7 +7,7 @@ Projetos e Técnicas Desenvolvidas:
 >Diário de desenvolvimento - Objetivo: Desenvolver um aplicativo do início ao fim que servirá como plataforma de educação. Nome do app: Proffy.
 
 1. Dia 1, 2 e 3 - desenvolvimento html e css responsivo - mobile first - da interface do aplicativo (página inicial, formulario de entrada, página de filtragem)
-2. Dia 4 - inicio do desenvolvimento back-end. Express, nunjucks.
+2. Dia 4 - inicio do desenvolvimento back-end. Express, nunjucks, início das configurações do banco de dados com sqlite-sync.
 ______
 
 - GOSTACK / GOBARBER: Estudos iniciais em node, react e react native.
