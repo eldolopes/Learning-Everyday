@@ -1,13 +1,11 @@
 const allTeachersModels = require('../models/teachers')
 const allCourses = require('../src/database/courses')
 const weekdays = require('../public/utils/weekdays')
-const database = require('../src/database/db')
-//console.log("Testando", proffys)
 
-const teachers = ()  => (req, res) => {
-    const allFilters = allTeachersModels.getAllFilters(req)()
-    const allProffys = database.getAllProffys()
-    const allClasses = database.getAllClasses()
+const teachers = db => async(req, res) => {
+    const allFilters = await allTeachersModels.getAllFilters(req)()
+    const allProffys = await allTeachersModels.getAllProffys()
+    const allClasses = await allTeachersModels.getAllClasses()
     //const allTeachers =  allTeachersModels.proffys
     res.render('study', {
         allProffys,
@@ -16,6 +14,7 @@ const teachers = ()  => (req, res) => {
         allCourses,
         weekdays
     })
+    console.log("Todos os proffys", allProffys)
     console.log("Todos os cursos", allClasses)
 }
 

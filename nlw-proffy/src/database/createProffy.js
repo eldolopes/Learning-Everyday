@@ -1,49 +1,54 @@
-const sqlite = require('sqlite-sync')
 const createProffy = async() => {
-    const proffy = await sqlite.run(`
+    const {insertProffy, insertClasse, insertClasseSchedule, id} = require('./db')
+    const createProffy = await sqlite.run(`
         INSERT INTO proffys (
             name,
             avatar,
             whatsaspp,
             bio
         ) VALUES (
-            ${insertProffy.name},
-            ${insertProffy.avatar},
-            ${insertProffy.whatsapp},
-            ${insertProffy.bio}
-        );
-    `)    
-    const proffy_id = proffy.lastID
+            '${insertProffy.name}',
+            '${insertProffy.avatar}',
+            '${insertProffy.whatsapp}',
+            '${insertProffy.bio}'
+        ); SELECT * FROM proffys WHERE id=${createProffy.id}
+    `)
+    
+    const proffy_lastID = createProffy.id
 
-    const classe = await sqlite.run(`
+    const createClasse = await sqlite.run(`
         INSERT INTO classes (
             subject,
             cost,
             proffy_id
         ) VALUES (
-            ${insertClasse.subject},
-            ${insertClasse.cost},
-            ${proffy_id}
-        );
+            '${insertClasse.subject}',
+            '${insertClasse.cost}',
+            '${proffy_lastID}'
+        ); SELECT last_id()
     `)
-    const classe_id = classe.lastID
+    const classe_lastID = createClasse.lastID
 
-    const insertAllClassesScheduleValues = insertClasseSchedule.map((value) => {        
-        return sqlite.run(`
+    const insertAllClassesScheduleValues = insertClasseSchedule.map( value => {        
+       const schedule = Promise.all( sqlite.run(`
             INSERT INTO class_schedule (
                 class_id,
                 weekday,
                 time_from,
                 time_to                
             ) VALUES (
-                ${classe_id},
-                ${value.weekday},
-                ${value.time_from},
-                ${value.time_to}                
+                '${classe_lastID}',
+                '${value.weekday}',
+                '${value.time_from}',
+                '${value.time_to}'                
             );
-        `)
+        `))
+        return schedule
     })
-    await Promise.all(insertAllClassesScheduleValues)
+    await insertAllClassesScheduleValues
 }
+
+ createProffy()
+
 
 module.exports = createProffy

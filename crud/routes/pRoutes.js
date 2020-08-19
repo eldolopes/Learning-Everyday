@@ -9,16 +9,18 @@ const pessoasRouter = ({ connection }) => {
     
     //RECEBE OS DADOS DE 'PESSOAS' E RETORNA O CONTEUDO PARA A FUNÇÃO 'PESSOASROUTER'
     router.get('/', pessoasController.index.bind(null, connection))
-    //RECEBE AS IDS DE DENTRO DE 'PESSOAS' 
-    router.get('/delete/:id', pessoasController.deleteOneC.bind(null, connection))
+     
+    
+    const deleteUser = '/delete/:id'
+    router.get(deleteUser, pessoasController.deleteOneC.bind(null, connection))
 
-    const create = '/create'
-    router.get(create, pessoasController.createForm)
-    router.post(create, pessoasController.createProcess.bind(null, connection))
+    const createUser = '/create'
+    router.get(createUser, pessoasController.createForm)
+    router.post(createUser, pessoasController.createProcess.bind(null, connection))
 
-    const update = '/update/:id'
-    router.get(update, pessoasController.updateForm.bind(null, connection))    
-    router.post(update, pessoasController.updateProcess.bind(null, connection))
+    const updateUser = '/update/:id'
+    router.get(updateUser, pessoasController.updateForm.bind(null, connection))    
+    router.post(updateUser, pessoasController.updateProcess.bind(null, connection))
 
     return router
 }  
