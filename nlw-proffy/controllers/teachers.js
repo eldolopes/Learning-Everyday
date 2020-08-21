@@ -4,8 +4,8 @@ const weekdays = require('../public/utils/weekdays')
 
 const teachers = db => async(req, res) => {
     const allFilters = await allTeachersModels.getAllFilters(req)()
-    const allProffys = await allTeachersModels.getAllProffys()
-    const allClasses = await allTeachersModels.getAllClasses()
+    const allProffys = await allTeachersModels.getAllProffys(db)
+    const allClasses = await allTeachersModels.getAllClasses(db)
     //const allTeachers =  allTeachersModels.proffys
     res.render('study', {
         allProffys,
@@ -21,10 +21,12 @@ const teachers = db => async(req, res) => {
 const giveClasses = () => (req, res) => {
     const data = req.query
     const isNotEmpty = Object.keys(data).length > 0
+    console.log(data)
     if(isNotEmpty){
         const changeCoursesOnPosition = require('../public/scripts/changeCoursesOnPosition')
         data.subject = changeCoursesOnPosition(data.subject)
-        allTeachersModels.proffys.push(data)
+        //AQUI PRECISO PASSAR O CAMINHO PARA ADICIONAR AO BANCO DE DADOS
+        //allTeachersModels.proffys.push(data) 
         return res.redirect("/study")
     }
 
@@ -33,6 +35,8 @@ const giveClasses = () => (req, res) => {
         weekdays
     })
 }
+
+
 
 module.exports = {
     teachers,

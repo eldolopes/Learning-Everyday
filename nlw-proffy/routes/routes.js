@@ -3,13 +3,13 @@ const router = express.Router()
 
 const teachersControllers = require('../controllers/teachers')
 
-const init = () => {
+const init = db => {
     router.get('/', (req, res) => {
         return res.render('index')
     })
-    router.get('/study', teachersControllers.teachers())
+    router.get('/study', teachersControllers.teachers(db))
 
-    router.get('/give-classes', teachersControllers.giveClasses())
+    router.get('/give-classes', teachersControllers.giveClasses(db))
         
     return router
 }

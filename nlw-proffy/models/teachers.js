@@ -35,12 +35,12 @@ const getAllFilters = req => () => {
     return allFilters
 }
 
-const getAllProffys = db => async() => {
+const getAllProffys = async(db) => {
     const findAll = await db('proffy').select('*')
     return findAll 
 }
 
-const getAllClasses = db => async() => {
+const getAllClasses = async(db) => {
     const allClasses = await db('classes').select('*')
     return allClasses
 }
