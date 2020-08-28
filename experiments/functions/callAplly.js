@@ -24,3 +24,16 @@ console.log(getPreco.apply(carro))
 console.log(getPreco.call(carro, 0.15, 'USD$'))
 //APPLY
 console.log(getPreco.apply(carro, [0.5, '$']))
+
+function precoComDesconto (desconto) {
+    return this.preco * (1 - desconto)
+}
+
+const produto2 = {
+    nome: 'Toyota Hilux',
+    preco: 1000000,
+    precoComDesconto
+}
+
+const resultado = precoComDesconto.call(produto2, 0.2)
+console.log(`O valor total com desconto é de R$ ${resultado}`)
