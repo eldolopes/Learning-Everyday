@@ -2,6 +2,8 @@
 Principais Projetos e Técnicas aplicadas durante os estudos no Desenvolvimento Full-Stack JavaScript, Node, React e React Native.
 
 Projetos e Técnicas Desenvolvidas:
+- WEBDEV: Principais práticas do Curso Web Moderno Completo com JavaScript 2020 + Projetos, cod3r udemy iniciado em agosto de 2020.
+______
 
 - NLW: Semana Next Level Week #2 disponibilizado pela Rocketseat. Stacks: node.js, react e react native.
 >Diário de desenvolvimento - Objetivo: Desenvolver um aplicativo do início ao fim que servirá como plataforma de educação. Nome do app: Proffy.
