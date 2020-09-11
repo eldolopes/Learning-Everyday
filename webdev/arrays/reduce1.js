@@ -11,7 +11,6 @@ resultadoSomaDasNotas = alunos.map(josnToObject).map(a => a.nota).reduce(functio
     console.log(acumulador, valorAtal)
     let totalNotas = acumulador + valorAtal
     return totalNotas
-    
 })
 console.log(resultadoSomaDasNotas)
 
