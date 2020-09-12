@@ -9,6 +9,7 @@ Projetos e Técnicas Desenvolvidas:
 3. Função,
 4. Objeto,
 5. Array,
+6. Node,
 ______
 
 - NLW: Semana Next Level Week #2 disponibilizado pela Rocketseat. Stacks: node.js, react e react native.
