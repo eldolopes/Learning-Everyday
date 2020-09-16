@@ -1,5 +1,12 @@
 {
   "dependencies": {
-    "axios": "^0.20.0"
-  }
+    "axios": "^0.20.0",
+    "nodemon": "^2.0.4"
+  },
+  "name": "Learning-Today",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/eldolopes/Learning-Everyday.git",
+  "author": "eldolopes <eldolopes@gmail.com>",
+  "license": "MIT"
 }
