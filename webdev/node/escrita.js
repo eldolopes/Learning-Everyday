@@ -16,21 +16,19 @@ fs.readFile(__dirname + '/arquivoGerado.json', (err, data) => {
     console.log(resultado)
 })
 
-const url = 'http://files.cod3r.com.br/curso-js/funcionarios.json'
+const url = 'https://covid19-brazil-api.now.sh/api/report/v1'
 
 const axios = require('axios')
-const homem = pessoa => pessoa.genero === 'M'
-const chineses = chines => chines.pais === 'China'
-const maiorSalario = (atual, acumulado) => {
-    return atual.salario > acumulado.salario ? atual : acumulado
+const maiorNumeroDeMortes = (atual, acumulado) => {
+    return atual.deaths > acumulado.deaths ? atual : acumulado
+}
+const menorNumeroDeMortes = (atual, acumulado) => {
+    return atual.deaths < acumulado.deaths ? atual : acumulado
 }
 
 axios.get(url).then( res => {
-    const dados = res.data
-    const resultado = 
-        dados
-        .filter(homem)
-        .filter(chineses)
-        .reduce(maiorSalario)    
-    console.log(resultado)
+    const dados = res.data.data
+    const resultadoMaior = dados.reduce(maiorNumeroDeMortes)
+    const resultadoMenor = dados.reduce(menorNumeroDeMortes)   
+    console.log(resultadoMaior, resultadoMenor)
 })
