@@ -11,11 +11,11 @@ const passo3 = ctx => ctx.valor3 = 'mid3'
 //operador rest (...) junta várias variáveis(função) em um array
 const exec = (ctx, ...middlewares) => {
     const execMiddleware = indice => {
-        middlewares && indice < middlewares.length && middlewares[indice] //sendo assim
-        (ctx, () => execMiddleware(indice + 1)) //execute
+        middlewares && indice < middlewares.length && //sendo assim
+        middlewares[indice](ctx, () => execMiddleware(indice + 1)) //execute
     }
     execMiddleware(0)//indice inicial
 }
-const ctx = {}
-exec(ctx, passo1, passo2, passo3)
-console.log(ctx)
+const obj = {}
+exec(obj, passo1, passo2, passo3)//obj recebe os dados
+console.log(obj)
