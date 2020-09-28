@@ -11,9 +11,16 @@ const getTurma = (letra, callback) => {
         res.on('end', () => {
             callback(JSON.parse(resultado))
         })
+        console.log(resultado)
     })
 }
-
+/*
+const letra = 'A'
+const callback = alunos => {
+    console.log(`${letra}: `, alunos)
+}
+getTurma(letra, callback)
+*/
 let nomes = []
 getTurma('A', alunos => {
     nomes = nomes.concat(alunos.map( a => `A: ${a.nome}`))
