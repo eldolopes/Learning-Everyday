@@ -23,9 +23,6 @@ function gerarVariosNumeros() {
 } 
 
 gerarVariosNumeros()
-    .then(numeros => `Resultado: ${numeros.sort()}`)
+    .then(numeros => numeros.slice())
+    .then(numeros => numeros.sort())
     .then(console.log)
-
-const array = [2, 3, 7, 2, 9, 2, 1]
-array.sort()
-console.log(array)
