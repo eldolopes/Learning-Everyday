@@ -1,9 +1,9 @@
-function chamandoOuNao (execute, chanceErro) {
+function chamandoOuNao (funcaoOuDado, chanceErro) {
     return new Promise((resolve, reject) => {
         if(Math.random() < chanceErro){
             reject('Ocorreu um erro!')
         } else {
-            resolve(execute)
+            resolve(funcaoOuDado)
         }
     })
 }
