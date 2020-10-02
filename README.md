@@ -11,6 +11,7 @@ Projetos e Técnicas Desenvolvidas:
 5. Array,
 6. Node,
 7. ESNext,
+8. Conceitos Web,
 ______
 
 - NLW: Semana Next Level Week #2 disponibilizado pela Rocketseat. Stacks: node.js, react e react native.
