@@ -8,10 +8,10 @@ function chamandoOuNao (funcaoOuDado, chanceErro) {
     })
 }
 
-function execute() {
+function func1() {
     return 'Deu tudo certo!'
 }
 const probabilidade = 0.5
-chamandoOuNao(execute(), probabilidade)
+chamandoOuNao(func1(), probabilidade)
     .then(console.log)
     .catch(err => console.log(err))
