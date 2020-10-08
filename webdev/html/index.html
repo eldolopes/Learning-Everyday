@@ -11,7 +11,10 @@
     </header>
     <nav>
         <a href wm-nav="exercicios/teste.html">00 - Teste</a> |
-        <a href wm-nav="exercicios/temp.html">Temp</a>
+        <a href wm-nav="exercicios/listas.html">01 - Listas</a> |
+        <a href wm-nav="exercicios/listaAninhada.html">02 - Lista Aninhada</a> |
+
+        
     </nav>
     <section id="conteudo">
         <h1>Section</h1>
@@ -21,9 +24,9 @@
         Curso de WEB Moderno
     </footer>
     <script>
+        const conteudo = document.getElementById('conteudo')
         document.querySelectorAll('[wm-nav]').forEach(link => {
             link.onclick = function(e){
-                const conteudo = document.getElementById('conteudo')
                 e.preventDefault()
                 fetch(link.getAttribute('wm-nav'))
                     .then(resp => resp.text())
