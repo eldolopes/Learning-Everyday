@@ -18,3 +18,9 @@ const somar2 = (...numeros) => {
     return total
 }
 console.log(somar2(2, 3, 1, 5, 6, 8))
+
+const saudacao = (saudacao, nome) => `${saudacao}, ${nome}!`
+console.log(saudacao('Bom dia', 'Eldo Lopes'))
+
+const potencia = base => exp => Math.pow(base, exp)
+console.log(potencia(2)(8))
