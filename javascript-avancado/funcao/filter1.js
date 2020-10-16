@@ -6,8 +6,7 @@ const alunos = [
 ]
 
 const notas = nota => nota.nota
-const aprovados = nota => {
-    
+const resultado = nota => {    
     if(nota >= 7) {
         console.log('Aprovado!')
     } else if (nota >= 4){
@@ -17,4 +16,4 @@ const aprovados = nota => {
     }  
 }
 
-const res = alunos.map(notas).filter(aprovados)
+const res = alunos.map(notas).filter(resultado)
