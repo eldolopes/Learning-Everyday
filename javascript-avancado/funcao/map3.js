@@ -8,7 +8,15 @@ const produtos = [
 ]
 
 const getNomes = produto => produto.produto
-const valorEstoque = produto => (produto.preco * produto.qtd).toFixed(2)
+const valorAcumulado = produto => (produto.preco * produto.qtd).toFixed(2)
+
+Array.prototype.meuMap = function(fn){
+    const array = []
+    for(let i = 0; i < this.length; i++){
+        array.push(fn(this[i], i, this))
+    }
+    return array
+}
 
 console.log(produtos.map(getNomes))
-console.log(produtos.map(valorEstoque))
+console.log(produtos.meuMap(valorAcumulado))
