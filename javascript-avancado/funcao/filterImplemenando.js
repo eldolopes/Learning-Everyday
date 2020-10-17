@@ -1,12 +1,20 @@
 const produtos = [
-    { produto: 'Cama', preco: 399, desconto: 0.3 },
-    { produto: 'Sofa', preco: 455, desconto: 0.4 },
-    { produto: 'Armário', preco: 232, desconto: 0.15 },
-    { produto: 'Mesa', preco: 676, desconto: 0.7 },
-    { produto: 'Tapete', preco: 400, desconto: 0.5 },
-    { produto: 'Vaso', preco: 754, desconto: 0.43 }
+    { produto: 'Cama', preco: 399, qtd: 12 },
+    { produto: 'Sofa', preco: 455, qtd: 3},
+    { produto: 'Armário', preco: 232, qtd: 65 },
+    { produto: 'Mesa', preco: 676, qtd: 43 },
+    { produto: 'Tapete', preco: 400, qtd: 9 },
+    { produto: 'Vaso', preco: 754, qtd: 24 }
 
 ]
+
+Array.prototype.meuMap = function(fn){
+    const array = []
+    for(let i = 0; i < this.length; i++){
+        array.push(fn(this[i], i, this))
+    }
+    return array
+}
 
 Array.prototype.meuFilter = function(fn){
     const array = []
@@ -14,14 +22,6 @@ Array.prototype.meuFilter = function(fn){
         if(fn(this[i], i, this)){
             array.push(this[i])
         }
-    }
-    return array
-}
-
-Array.prototype.meuMap = function(fn){
-    const array = []
-    for(let i = 0; i < this.length; i++){
-        array.push(fn(this[i], i, this))
     }
     return array
 }
