@@ -1,2 +1,4 @@
-nome: Eldo Lopes,
-nome: Arthut Lopes
+{ 
+    pai: Eldo Lopes,
+    filho: Arthut Lopes
+}
