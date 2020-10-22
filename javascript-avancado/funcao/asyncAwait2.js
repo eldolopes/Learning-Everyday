@@ -5,8 +5,9 @@ const valorEntre = (min, max, numerosProibibos) => {
         const gerador = parseInt(Math.random() * fator)        
         if (numerosProibibos.includes(gerador)) {
             reject('Algum número repetiu. Tente novamente.')
+        }else{
+            resolve(gerador)
         }
-            resolve(gerador)        
     })
 }
 
