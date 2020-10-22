@@ -11,7 +11,7 @@ const esperandoPor = (valor, tempo = 2000, infoOrSeparete = '-') => {
 
 const executar = async() => {
     await esperandoPor('Primeiro', 1000)
-    await esperandoPor('Segundo'), 3000
+    await esperandoPor('Segundo', 3000)
     await esperandoPor('Terceiro', 5000)
 }
 executar()
