@@ -11,4 +11,5 @@ class Produto {
 }
 
 const p1 = new Produto('Cama', 500)
-console.log(p1.precoComDesconto)
+console.log(p1)
+console.log(p1.nome)
