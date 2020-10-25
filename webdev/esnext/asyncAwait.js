@@ -30,4 +30,4 @@ let getAlunos = async () => {
 getAlunos()
     .then(alunos => alunos.map(a => a.nome))
     //.then(resultado => console.log(resultado))
-    .then(console.log)//como o valor é único pode ser chamado direto o método
+.then(console.log)//como o valor é único pode ser chamado direto o método
