@@ -1,8 +1,15 @@
 # Learning-Everyday
-Principais Projetos e Técnicas aplicadas durante os estudos no Desenvolvimento Full-Stack JavaScript, Node, React e React Native.
-
+Principais Projetos e Técnicas aplicadas durante os estudos no Desenvolvimento Web JavaScript.
 Projetos e Técnicas Desenvolvidas:
-- WEBDEV: Principais práticas do Curso Web Moderno Completo com JavaScript 2020 + Projetos, cod3r udemy iniciado em agosto de 2020.
+
+- JavaScript Avançado: Principais práticas do Curso JavaScript Funcional e Reativo, cod3r udemy iniciado em agosto de 2020.
+>Diário de desenvolvimento
+1. Funções,
+3. Princípios da programação funcional,
+4. Programação reativa,
+______
+
+- WMJS: Principais práticas do Curso Web Moderno Completo com JavaScript 2020 + Projetos, cod3r udemy iniciado em agosto de 2020.
 >Diário de desenvolvimento
 1. Fundamentos de javascript,
 2. Estruturas de controle,
