@@ -6,7 +6,7 @@ Projetos e Técnicas Desenvolvidas:
 >Diário de desenvolvimento
 1. Funções,
 3. Princípios da programação funcional,
-4. Programação reativa,
+4. Programação reativa RxJS,
 ______
 
 - WMJS: Principais práticas do Curso Web Moderno Completo com JavaScript 2020 + Projetos, cod3r udemy iniciado em agosto de 2020.
