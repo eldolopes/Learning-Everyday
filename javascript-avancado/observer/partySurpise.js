@@ -23,7 +23,7 @@ const union = () => {
     console.log('\nSindico: Monitorando o barulho.\n')
 }
 
-const concierge = async (observers) => {
+const concierge = async (...observers) => {
     while(true) {
         const answer = await getAnswer('O namorado chegou? (s/N/q): ')
         if(answer.toLowerCase() === 's') {
@@ -34,4 +34,4 @@ const concierge = async (observers) => {
     }    
 }
 
-concierge([girlfriend, union])
+concierge(girlfriend, union)
