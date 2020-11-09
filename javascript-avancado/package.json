@@ -1,0 +1,15 @@
+{
+  "name": "javascript-avancado",
+  "version": "1.0.0",
+  "description": "",
+  "main": "stream2.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "rxjs": "^6.6.3"
+  }
+}
