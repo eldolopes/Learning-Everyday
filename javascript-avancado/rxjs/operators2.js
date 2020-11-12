@@ -3,9 +3,10 @@ const { ajax } = require('rxjs/ajax')
 
 const { concatAll, map } = require('rxjs/operators')
 
-ajax({
+const user = 'rocketseat'
+const repositorys = user => ajax({
     createXHR: () => new XMLHttpRequest(),
-    url: 'https://api.github.com/users/cod3rcursos/repos'
+    url: `https://api.github.com/users/${user}/repos`
 })
     .pipe(
         map(data => JSON.parse(data.xhr.responseText)),
@@ -13,3 +14,5 @@ ajax({
         map(data => data.name)
     )
     .subscribe(console.log)
+
+repositorys(user)
