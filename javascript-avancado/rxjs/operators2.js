@@ -3,7 +3,7 @@ const { ajax } = require('rxjs/ajax')
 
 const { concatAll, map } = require('rxjs/operators')
 
-const users = ['rocketseat', 'cod3rcursos', 'eldolopes', 'microsoft', 'apple']
+const users = ['rocketseat', 'cod3rcursos']
 
 const repositorys = user => ajax({
     createXHR: () => new XMLHttpRequest(),
@@ -16,9 +16,8 @@ const repositorys = user => ajax({
     )
     .subscribe(console.log)
 
-const getRepo = fn => {
-    return users.forEach(data => fn(data))
+const getAllRepo = fn => {    
+    return (users || []).forEach(data => fn(data))
 }
 
-getRepo(repositorys)
-
+getAllRepo(repositorys)
