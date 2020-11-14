@@ -14,15 +14,15 @@ const firstValue = () => {
 }
 
 const endValue = () => {
-    return souce => {
+    return source => {
         return new Observable(subscriber => {
             let end
-            souce.subscribe({
+            source.subscribe({
                 next(data){
                     end = data
                 },
                 complete(){
-                    if(souce !== undefined){
+                    if(source !== undefined){
                         subscriber.next(end)
  
                     }
