@@ -9,7 +9,7 @@ Projetos e Técnicas Desenvolvidas:
 4. Programação reativa RxJS,
 ______
 
-- WMJS: Principais práticas do Curso Web Moderno Completo com JavaScript 2020 + Projetos, cod3r udemy iniciado em agosto de 2020.
+- WEBDEV - WMJS: Principais práticas do Curso Web Moderno Completo com JavaScript 2020 + Projetos, cod3r udemy iniciado em agosto de 2020.
 >Diário de desenvolvimento
 1. Fundamentos de javascript,
 2. Estruturas de controle,
