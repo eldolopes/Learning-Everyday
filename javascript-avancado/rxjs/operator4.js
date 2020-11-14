@@ -22,7 +22,10 @@ const endValue = () => {
                     end = data
                 },
                 complete(){
-                    subscriber.next(end)
+                    if(souce !== undefined){
+                        subscriber.next(end)
+ 
+                    }
                     subscriber.complete()
                 }
             })
