@@ -4,18 +4,16 @@ const operatorPipeCreator = nextFn => {
     return source => {
         return new Observable(subscriber => {
             source.subscribe({
-                next(data) {
-                    nextFn(subscriber, data)
-                }
+                next: nextFn(subscriber)
             })
         })
     }
 }
 
 const firstValue = () => {
-    return operatorPipeCreator((subscriber, data) => {
+    return operatorPipeCreator(subscriber => data => {
         subscriber.next(data)
-        subscriber.complete()
+        subscriber.complete()        
     })
 }
 
