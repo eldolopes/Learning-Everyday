@@ -1,1 +1,0 @@
-SELECT SUM(valor) AS total FROM despesas
